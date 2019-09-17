@@ -1,0 +1,664 @@
+html {
+    height: 100%;
+    min-height: 100%;
+    background-image: url("../images/background.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: transparent;
+}
+
+
+p {
+    font-family: agency-fb, sans-serif;
+    font-size: 1.9vw;
+}
+
+h2 {
+    font-family: agency-fb, sans-serif;
+    font-size: 3vw;
+}
+
+/* gør hjemmesiden for langsom */
+/* #pageoverlaywrap {
+    width: 140%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: 0s;
+    transform: translate(0%, 0%);
+}
+
+#pageoverlay {
+    transition: 0s;
+    opacity: 0.20;
+    position: absolute;
+    background-image: radial-gradient(rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.150), rgba(0, 0, 0, 0.800));
+    width: 100%;
+    height: 100%;
+} */
+
+
+
+#forside {
+    height: 100vh;
+    /* transform: scaleY(20vh); */
+
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FORSIDE LOGO "GIF" */
+#forside img {
+    position: absolute;
+    transition: 0s;
+    width: 60%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 52%;
+
+}
+
+/* SCROLL ICON */
+#scrollwrap {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 93%;
+    text-align: center;
+    font-size: 3vh;
+    opacity: 0;
+}
+
+#scrollwrap p {
+    margin: 0;
+    color: #000000;
+}
+
+/* SCROLL ICON ANIMATION */
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(60px);
+    }
+}
+
+svg #wheel {
+    animation: scroll ease 2s infinite;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+}
+
+
+
+/* MENU */
+/* farvet overlag */
+#menuoverlay {
+    pointer-events: none;
+    mix-blend-mode: color;
+    z-index: 100;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+#menuoverlay:before {
+    content: "";
+    z-index: 98;
+    opacity: 0.8;
+    height: 200vw;
+    width: 200vw;
+    position: absolute;
+    background-image: url("../images/overlaymenu.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 50%;
+    left: 50%;
+}
+
+
+@keyframes rotateoverlay {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+#menuoverlay:before {
+    animation: rotateoverlay linear 15s infinite;
+}
+
+/* paper overlay */
+#menuoverlaytest {
+    pointer-events: none;
+    background-color: black;
+    z-index: 140;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    
+    position: absolute;
+
+    background-image: url("../images/overlaymenu2.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    mix-blend-mode: multiply;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#menuside {
+    height: 100vh;
+    display: flex;
+    user-select: none;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+}
+
+
+#moveBar {
+    z-index: 100;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    height: 100%;
+    width: 1.5%;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+#moveBar img {
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    position: relative;
+    width: 60%;
+    opacity: 0.8;
+    transition: 0.3s;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+
+#eleverne {
+    z-index: 100;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 25%;
+    top: 50%;
+
+    width: 35%;
+    pointer-events: none;
+}
+
+#skolen {
+    z-index: 100;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 73%;
+    top: 50%;
+    transform-origin: 0;
+    width: 35%;
+    pointer-events: none;
+}
+
+/*  RIGHT MENU */
+#menuR {
+    z-index: 99;
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    transform: translateX(+50%);
+}
+
+#menuRBG {
+    position: absolute;
+    z-index: 99;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/rightmenubg.jpg");
+    background-position-x: -25vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#hiddenSideR {
+    z-index: 60;
+    height: 100%;
+    width: 100%;
+}
+
+
+#hiddenSideR video {
+    z-index: 22160;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 60%;
+
+    -webkit-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+}
+
+
+#splatpng {
+    z-index: 0;
+    height: 100%;
+    width: auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 100%;
+    top: 50%;
+    pointer-events: none;
+}
+
+#splatpng2 {
+    transition: 0s;
+    height: 100%;
+    z-index: 2;
+    width: auto;
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    left: 0%;
+    top: 50%;
+    pointer-events: none;
+}
+
+#splatpng3 {
+    transition: 0s;
+    height: 100%;
+    z-index: 2;
+    left: 20%;
+    width: auto;
+    position: absolute;
+    transform: translate(-50%, -50%) scaleX(-1);
+    left: 100%;
+    top: 50%;
+    pointer-events: none;
+}
+
+#splatpng4 {
+    transition: 0s;
+    height: 100%;
+    z-index: 2;
+    width: auto;
+    position: relative;
+    transform: translate(-50%, -50%) rotate(60deg);
+    left: 0%;
+    top: 50%;
+    pointer-events: none;
+}
+
+
+#splatpng img{
+    transform: translate(-50%, -50%) scale(0.1);
+    height: 100%;
+    transition: 2s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+
+#splatpng2 img{
+    transform: translate(-50%, -50%) scale(0.1);
+    height: 100%;
+    transition: 2s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#splatpng3 img{
+    transform: translate(-50%, -50%) scale(0.1);
+    height: 100%;
+    transition: 2s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#splatpng4 img{
+    transform: translate(-50%, -50%) scale(0.1);
+    height: 100%;
+    transition: 2s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#splatpngL {
+    height: 100%;
+    z-index: 2;
+    width: auto;
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    left: 0%;
+    top: 50%;
+}
+
+#splatpngL img{
+    transform: translate(-50%, -50%) scale(0.1);
+    height: 100%;
+    transition: 2s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#splatpng2L {
+    transition: 0s;
+    height: 100%;
+    z-index: 2;
+    width: auto;
+    position: absolute;
+    transform: translate(-50%, -50%) scaleY(-1);
+    left: 100%;
+    top: 50%;
+}
+
+
+#splatpng2L img{
+    transform: translate(-50%, -50%) scale(0.1);
+    height: 100%;
+    transition: 2s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#splatpng3L {
+    transition: 0s;
+    height: 100%;
+    z-index: 2;
+    left: 20%;
+    width: auto;
+    position: absolute;
+    transform: translate(-50%, -50%) scaleX(-1);
+    left: 0%;
+    top: 50%
+}
+
+#splatpng3L img{
+    transform: translate(-50%, -50%) scale(0.1);
+    height: 100%;
+    transition: 2s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+/* LEFT MENU */
+#menuL {
+    z-index: 99;
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+#menuLBG {
+    position: absolute;
+    z-index: 99;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/leftmenubg.jpg");
+    background-position-x: 25vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#hiddenSideL {
+    height: 100%;
+    width: 100%;
+}
+
+/* SECTIONS */
+#sectionwrapR, #sectionwrapL {
+    display: none;
+    height: 20vh;
+}
+
+#sectionRp1, #sectionRp2, #sectionRp3, #sectionLp1, #sectionLp2{
+    height: 100vh;
+    width: 100%;
+}
+
+#textwrap {
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 75%;
+    top: 50vh;
+    z-index: 9999;
+}
+
+#leftp1 {
+    z-index: 99999;
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 30%;
+    top: 50vh;
+    -webkit-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+}
+
+#textwrapL1 {
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 30%;
+    top: 50vh;
+    z-index: 9999;
+}
+
+#leftp2 {
+    z-index: 99999;
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 75%;
+    top: 50vh;
+    -webkit-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+}
+
+#textwrapL2 {
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 75%;
+    top: 50vh;
+    z-index: 9999;
+}
+
+#leftp3 {
+    z-index: 99999;
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 30%;
+    top: 50vh;
+    -webkit-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+}
+
+/* p1r */
+#textwrap1 {
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 75%;
+    top: 50vh;
+    z-index: 9999;
+}
+
+#Righ1p2 {
+    z-index: 99999;
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 30%;
+    top: 50vh;
+    -webkit-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+}
+
+/* p2r */
+#textwrap2 {
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 30%;
+    top: 50vh;
+    z-index: 9999;
+}
+
+#Righ1p3 {
+    z-index: 99999;
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 75%;
+    top: 50vh;
+    -webkit-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+}
+
+/* p3r */
+#textwrap3 {
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 75%;
+    top: 50vh;
+    z-index: 9999;
+}
+
+#Righ1p4 {
+    z-index: 99999;
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 30%;
+    top: 50vh;
+    -webkit-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+    box-shadow: 9px 9px 14px -4px rgba(0,0,0,0.75);
+}
+
+
+
+
+/* footer */
+.OneDivToEndEmAll {
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+}
+
+.foot {
+margin-top: 18%;
+width: 100%;
+height: 50%;
+background-image: url("../images/footer.png");
+background-position: center;
+background-size: 120% 100%;
+background-repeat: no-repeat;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.foot div{
+    width: 90%;
+    margin-left: 4%;
+    height: 40%;
+    display: flex;
+    text-align: left;
+    }
+
+    .foot div p{
+        font-size: 2.5vw;
+        color: white;
+        width: 90%;
+        margin: 2% 0 0 7%;
+        vertical-align: middle;
+        }
+
+    .foot div div{
+        width: 50%;
+        height: 100%;
+        }
+
+        .foot div div p{
+            color: rgb(255, 255, 255);
+            width: 90%;
+            vertical-align: top;
+            margin: 1% 0 0 7%;
+            }
+
+        .foot div div img{
+            float: right;
+            max-width: 80%;
+            max-height: 80%
+            }
+    
+
+
